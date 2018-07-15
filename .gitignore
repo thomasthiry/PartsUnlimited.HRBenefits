@@ -1,0 +1,33 @@
+﻿# Visual Studio user-specific files
+*.suo
+*.user
+*.docstates
+*/.vs/*
+.vs/*
+
+# Build working directories
+**/bin/
+**/obj/
+
+# Publish directory
+**/PublishOutput/
+
+# NodeJS dependencies
+**/node_modules/
+
+# Bower dependencies
+**/bower_components/
+
+# Windows thumbnail cache
+Thumbs.db
+
+# Windows folder config
+Desktop.ini
+
+# Nuget Packages
+**/packages/
+
+**/TestResults/
+
+**/uploads/*
+!**/uploads/.gitkeep

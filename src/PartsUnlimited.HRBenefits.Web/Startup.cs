@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PartsUnlimited.HRBenefits.Application.Interfaces;
+using PartsUnlimited.HRBenefits.Application.Services;
 
 namespace PartsUnlimited.HRBenefits
 {
@@ -30,6 +32,7 @@ namespace PartsUnlimited.HRBenefits
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddTransient<IEmployeeService, EmployeeService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

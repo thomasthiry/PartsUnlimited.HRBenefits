@@ -1,4 +1,5 @@
-﻿@{
+﻿@model PartsUnlimited.HRBenefits.Web.ViewModels.EmployeesViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -11,6 +12,9 @@
         <tr><th>Name</th></tr>
     </thead>
     <tbody>
-        <tr><td><a href="#">John Smith</a></td></tr>
+    @foreach(var employee in Model.Employees)
+    {
+        <tr><td><a href="#">@employee.FirstName @employee.LastName</a></td></tr>
+    }
     </tbody>
 </table>

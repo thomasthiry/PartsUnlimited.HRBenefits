@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,8 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PartsUnlimited.HRBenefits.Application.Interfaces;
 using PartsUnlimited.HRBenefits.Application.Services;
+using PartsUnlimited.HRBenefits.Web.Configuration;
 
-namespace PartsUnlimited.HRBenefits
+namespace PartsUnlimited.HRBenefits.Web
 {
     public class Startup
     {
@@ -33,6 +30,8 @@ namespace PartsUnlimited.HRBenefits
             });
 
             services.AddTransient<IEmployeeService, EmployeeService>();
+
+            services.AddSingleton(MapperConfig.CreateMapper());
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

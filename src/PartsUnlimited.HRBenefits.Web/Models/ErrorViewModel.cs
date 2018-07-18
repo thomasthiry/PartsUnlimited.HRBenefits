@@ -1,6 +1,4 @@
-using System;
-
-namespace PartsUnlimited.HRBenefits.Models
+namespace PartsUnlimited.HRBenefits.Web.Models
 {
     public class ErrorViewModel
     {

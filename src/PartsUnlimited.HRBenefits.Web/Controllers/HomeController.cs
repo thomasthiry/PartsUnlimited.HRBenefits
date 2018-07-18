@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using PartsUnlimited.HRBenefits.Application.Interfaces;
-using PartsUnlimited.HRBenefits.Models;
+using PartsUnlimited.HRBenefits.Web.Models;
 using PartsUnlimited.HRBenefits.Web.ViewModels;
 
-namespace PartsUnlimited.HRBenefits.Controllers
+namespace PartsUnlimited.HRBenefits.Web.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IEmployeeService _employeeService;
+        private readonly IMapper _mapper;
 
-        public HomeController(IEmployeeService employeeService)
+        public HomeController(IEmployeeService employeeService, IMapper mapper)
         {
             _employeeService = employeeService;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
@@ -30,14 +30,7 @@ namespace PartsUnlimited.HRBenefits.Controllers
 
             var employeesViewModel = new EmployeesViewModel
             {
-                Employees = new List<EmployeeViewModel>
-                {
-                    new EmployeeViewModel
-                    {
-                        FirstName = "John",
-                        LastName = "Doe"
-                    }
-                }
+                Employees = _mapper.Map<List<EmployeeViewModel>>(employees)
             };
             return View(employeesViewModel);
         }

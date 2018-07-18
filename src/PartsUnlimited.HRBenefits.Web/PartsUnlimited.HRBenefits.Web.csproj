@@ -10,6 +10,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PartsUnlimited.HRBenefits.Application\PartsUnlimited.HRBenefits.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="Views\Home\Employees.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

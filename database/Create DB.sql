@@ -18,5 +18,5 @@ CREATE TABLE EMPLOYEE (
 );
 
 INSERT INTO public.employee
-(reference, lastname, firstname, dateofbirth, addressnumber, addressstreet, addresscity, addresspostalcode, addresscountry, joinedcompany_date, grossmonthlysalary, isgrantedcar, nbdaysyearlyholidays)
+(reference, lastname, firstname, dateofbirth, addressnumber, addressstreet, addresscity, addresspostalcode, addresscountry, joinedcompanydate, grossmonthlysalary, isgrantedcar, nbdaysyearlyholidays)
 VALUES(1, 'Cooper', 'Dale', '1959-02-22', '54', 'Trees street', 'Yakima, Washington', '98908', 'USA', '2015-03-18', 3000, false, 20);

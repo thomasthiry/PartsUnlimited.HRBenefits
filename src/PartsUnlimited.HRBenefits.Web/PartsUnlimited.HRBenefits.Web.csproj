@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PartsUnlimited.HRBenefits.Application\PartsUnlimited.HRBenefits.Application.csproj" />
+    <ProjectReference Include="..\PartsUnlimited.HRBenefits.Infrastructure\PartsUnlimited.HRBenefits.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

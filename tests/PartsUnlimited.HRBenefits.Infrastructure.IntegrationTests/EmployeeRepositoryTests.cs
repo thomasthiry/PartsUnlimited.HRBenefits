@@ -1,8 +1,7 @@
-using System;
 using PartsUnlimited.HRBenefits.Infrastructure.Repositories;
 using Xunit;
 
-namespace PartsUnlimited.HRBenefits.Infrastructure.Tests
+namespace PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests
 {
     public class EmployeeRepositoryTests
     {

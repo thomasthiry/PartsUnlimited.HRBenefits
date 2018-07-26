@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests", "tests\PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests\PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests.csproj", "{DD00F7FF-1595-42B9-B2EB-193FE4F847FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartsUnlimited.HRBenefits.ComponentTests", "tests\PartsUnlimited.HRBenefits.ComponentTests\PartsUnlimited.HRBenefits.ComponentTests.csproj", "{7DB61B01-4EE6-498F-9BD7-551B7530FB1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{DD00F7FF-1595-42B9-B2EB-193FE4F847FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD00F7FF-1595-42B9-B2EB-193FE4F847FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD00F7FF-1595-42B9-B2EB-193FE4F847FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DB61B01-4EE6-498F-9BD7-551B7530FB1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB61B01-4EE6-498F-9BD7-551B7530FB1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB61B01-4EE6-498F-9BD7-551B7530FB1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB61B01-4EE6-498F-9BD7-551B7530FB1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

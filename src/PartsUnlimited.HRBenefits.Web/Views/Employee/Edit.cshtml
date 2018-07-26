@@ -1,6 +1,6 @@
 ﻿@model PartsUnlimited.HRBenefits.Web.ViewModels.EmployeeViewModel
 @{
-    ViewData["Title"] = "Employee: " + Model.FirstName + " " + Model.LastName;
+    ViewData["Title"] = "Employee: " + Model.FirstName + " " + Model.LastName + " (" + Model.Reference + ")";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -12,5 +12,45 @@
 <div class="form-group">
     <label for="lastname">Last name</label>
     <input type="text" class="form-control" id="lastname" value="@Model.LastName">
+</div>
+<div class="form-group">
+    <label for="reference">Reference</label>
+    <input type="text" class="form-control" id="reference" value="@Model.Reference">
+</div>
+<div class="form-group">
+    <label for="dateofbirth">Date Of Birth</label>
+    <input type="text" class="form-control" id="dateofbirth" value="@Model.DateOfBirth.ToShortDateString()">
+</div>
+<div class="form-group">
+    <label for="addressnumber">House Number</label>
+    <input type="text" class="form-control" id="addressnumber" value="@Model.AddressNumber">
+</div>
+<div class="form-group">
+    <label for="addressstreet">Street</label>
+    <input type="text" class="form-control" id="addressstreet" value="@Model.AddressStreet">
+</div>
+<div class="form-group">
+    <label for="addresscity">City</label>
+    <input type="text" class="form-control" id="addresscity" value="@Model.AddressCity">
+</div>
+<div class="form-group">
+    <label for="addresspostalcode">Postal Code</label>
+    <input type="text" class="form-control" id="addresspostalcode" value="@Model.AddressPostalCode">
+</div>
+<div class="form-group">
+    <label for="addresscountry">Postal Country</label>
+    <input type="text" class="form-control" id="addresscountry" value="@Model.AddressCountry">
+</div>
+<div class="form-group">
+    <label for="grossmonthlysalary">Gross Monthly Salary</label>
+    <input type="text" class="form-control" id="grossmonthlysalary" value="@Model.GrossMonthlySalary">
+</div>
+<div class="form-group">
+    <label for="nbdaysofholidays">Number Of Days Of Holidays</label>
+    <input type="text" class="form-control" id="nbdaysofholidays" value="@Model.NbDaysYearlyHolidays">
+</div>
+<div class="form-check">
+    <input type="checkbox" class="form-check-input" id="isgrantedcar" value="@Model.IsGrantedCar">
+    <label class="form-check-label" for="isgrantedcar">Grant Car</label>
 </div>
 <button type="submit" class="btn btn-primary">Save</button>

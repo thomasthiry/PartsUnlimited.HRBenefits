@@ -1,8 +1,7 @@
 using System;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using PartsUnlimited.HRBenefits.Application.Interfaces.Infrastructure;
 using PartsUnlimited.HRBenefits.Application.Services;
+using PartsUnlimited.HRBenefits.ComponentTests.Mocks;
 using PartsUnlimited.HRBenefits.Domain.Entities;
 using PartsUnlimited.HRBenefits.Web.Configuration;
 using PartsUnlimited.HRBenefits.Web.Controllers;
@@ -25,16 +24,6 @@ namespace PartsUnlimited.HRBenefits.ComponentTests
             var employeesViewModel = result.Model as EmployeesViewModel;
 
             employeesViewModel.Employees.ShouldHaveSingleItem();
-        }
-    }
-
-    public class EmployeeRepositoryMock : IEmployeeRepository
-    {
-        public List<Employee> Employees = new List<Employee>();
-
-        public IEnumerable<Employee> GetEmployees()
-        {
-            return Employees;
         }
     }
 }

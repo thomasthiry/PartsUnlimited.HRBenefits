@@ -5,7 +5,7 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests
 {
     public class EmployeeRepositoryTests
     {
-        [Fact]
+        [Fact(Skip = "Requires DB, used only for dev")]
         public void GetEmployees()
         {
             var employeeRepository = new EmployeeRepository();
@@ -13,7 +13,7 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests
             var employees = employeeRepository.GetEmployees();
         }
 
-        [Fact]
+        [Fact(Skip = "Requires DB, used only for dev")]
         public void GetEmployee()
         {
             var employeeRepository = new EmployeeRepository();

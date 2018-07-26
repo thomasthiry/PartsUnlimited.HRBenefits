@@ -14,13 +14,13 @@ namespace PartsUnlimited.HRBenefits.ComponentTests
     public class EmployeeTests
     {
         [Fact]
-        public void Employees_OneEmployee_ReturnsTheEmployee()
+        public void List_OneEmployee_ReturnsTheEmployee()
         {
             var employeeRepositoryMock = new EmployeeRepositoryMock();
             employeeRepositoryMock.Employees.Add(new Employee{ Id = 1, FirstName = "Dale", LastName = "Cooper" });
-            var controller = new HomeController(new EmployeeService(employeeRepositoryMock), MapperConfig.CreateMapper());
+            var controller = new EmployeeController(new EmployeeService(employeeRepositoryMock), MapperConfig.CreateMapper());
 
-            var result = controller.Employees() as ViewResult;
+            var result = controller.List() as ViewResult;
             var employeesViewModel = result.Model as EmployeesViewModel;
 
             employeesViewModel.Employees.ShouldHaveSingleItem();

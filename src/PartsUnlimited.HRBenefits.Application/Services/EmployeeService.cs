@@ -18,5 +18,10 @@ namespace PartsUnlimited.HRBenefits.Application.Services
         {
             return _employeeRepository.GetEmployees();
         }
+
+        public Employee GetEmployee(int id)
+        {
+            return _employeeRepository.GetEmployee(id);
+        }
     }
 }

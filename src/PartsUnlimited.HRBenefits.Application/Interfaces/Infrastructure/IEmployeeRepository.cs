@@ -6,5 +6,6 @@ namespace PartsUnlimited.HRBenefits.Application.Interfaces.Infrastructure
     public interface IEmployeeRepository
     {
         IEnumerable<Employee> GetEmployees();
+        Employee GetEmployee(int id);
     }
 }

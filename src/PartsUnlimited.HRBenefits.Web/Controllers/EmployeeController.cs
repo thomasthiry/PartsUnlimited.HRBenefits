@@ -27,5 +27,13 @@ namespace PartsUnlimited.HRBenefits.Web.Controllers
             };
             return View(employeesViewModel);
         }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var employee = _employeeService.GetEmployee(id);
+
+            return View(_mapper.Map<EmployeeViewModel>(employee));
+        }
     }
 }

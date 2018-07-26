@@ -1,0 +1,16 @@
+﻿@model PartsUnlimited.HRBenefits.Web.ViewModels.EmployeeViewModel
+@{
+    ViewData["Title"] = "Employee: " + Model.FirstName + " " + Model.LastName;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="form-group">
+    <label for="firstname">First name</label>
+    <input type="text" class="form-control" id="firstname" value="@Model.FirstName">
+</div>
+<div class="form-group">
+    <label for="lastname">Last name</label>
+    <input type="text" class="form-control" id="lastname" value="@Model.LastName">
+</div>
+<button type="submit" class="btn btn-primary">Save</button>

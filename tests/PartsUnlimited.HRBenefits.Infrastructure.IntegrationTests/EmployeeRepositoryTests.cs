@@ -12,6 +12,14 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests
 
             var employees = employeeRepository.GetEmployees();
         }
+
+        [Fact]
+        public void GetEmployee()
+        {
+            var employeeRepository = new EmployeeRepository();
+
+            var employee = employeeRepository.GetEmployee(1);
+        }
     }
 }
 

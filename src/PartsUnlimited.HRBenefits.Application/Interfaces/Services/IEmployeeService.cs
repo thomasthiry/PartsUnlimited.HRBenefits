@@ -6,5 +6,6 @@ namespace PartsUnlimited.HRBenefits.Application.Interfaces.Services
     public interface IEmployeeService
     {
         IEnumerable<Employee> GetEmployees();
+        Employee GetEmployee(int id);
     }
 }

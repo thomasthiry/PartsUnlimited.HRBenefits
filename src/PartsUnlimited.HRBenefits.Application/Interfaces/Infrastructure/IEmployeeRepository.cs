@@ -7,5 +7,6 @@ namespace PartsUnlimited.HRBenefits.Application.Interfaces.Infrastructure
     {
         IEnumerable<Employee> GetEmployees();
         Employee GetEmployee(int id);
+        void Update(Employee employee);
     }
 }

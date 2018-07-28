@@ -2,6 +2,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using PartsUnlimited.HRBenefits.Application.Interfaces.Services;
+using PartsUnlimited.HRBenefits.Domain.Entities;
 using PartsUnlimited.HRBenefits.Web.ViewModels;
 
 namespace PartsUnlimited.HRBenefits.Web.Controllers
@@ -34,6 +35,13 @@ namespace PartsUnlimited.HRBenefits.Web.Controllers
             var employee = _employeeService.GetEmployee(id);
 
             return View(_mapper.Map<EmployeeViewModel>(employee));
+        }
+
+        public IActionResult Edit(int id, EmployeeViewModel employeeViewModel)
+        {
+            _employeeService.Update(_mapper.Map<Employee>(employeeViewModel));
+
+            return RedirectToAction(nameof(List));
         }
     }
 }

@@ -25,6 +25,11 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.Repositories
             }
         }
 
+        public void Update(Employee employee)
+        {
+            throw new System.NotImplementedException();
+        }
+
         private static NpgsqlConnection GetConnection()
         {
             return new NpgsqlConnection("Host=localhost;Username=partsunlimited_hrbenefits;Password=hrbenefits;Database=partsunlimited_hrbenefits");

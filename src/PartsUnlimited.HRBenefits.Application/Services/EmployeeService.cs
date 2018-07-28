@@ -23,5 +23,10 @@ namespace PartsUnlimited.HRBenefits.Application.Services
         {
             return _employeeRepository.GetEmployee(id);
         }
+
+        public void Update(Employee employee)
+        {
+            _employeeRepository.Update(employee);
+        }
     }
 }

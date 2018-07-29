@@ -27,7 +27,43 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.Repositories
 
         public void Update(Employee employee)
         {
-            throw new System.NotImplementedException();
+            using (var connection = GetConnection())
+            {
+                connection.Execute($@"
+                    UPDATE public.employee 
+                    SET
+                        reference = @{nameof(employee.Reference)}, 
+                        lastname = @{nameof(employee.LastName)}, 
+                        firstname = @{nameof(employee.FirstName)}, 
+                        dateofbirth = @{nameof(employee.DateOfBirth)}, 
+                        addressnumber = @{nameof(employee.AddressNumber)}, 
+                        addressstreet = @{nameof(employee.AddressStreet)}, 
+                        addresscity = @{nameof(employee.AddressCity)}, 
+                        addresspostalcode = @{nameof(employee.AddressPostalCode)}, 
+                        addresscountry = @{nameof(employee.AddressCountry)}, 
+                        joinedcompanydate = @{nameof(employee.JoinedCompanyDate)}, 
+                        grossmonthlysalary = @{nameof(employee.GrossMonthlySalary)}, 
+                        isgrantedcar = @{nameof(employee.IsGrantedCar)},
+                        nbdaysyearlyholidays = @{nameof(employee.NbDaysYearlyHolidays)}
+                    WHERE Id = @{nameof(employee.Id)};", 
+                    new
+                    {
+                        employee.Id, 
+                        employee.Reference, 
+                        employee.LastName, 
+                        employee.FirstName, 
+                        employee.DateOfBirth, 
+                        employee.AddressNumber, 
+                        employee.AddressStreet, 
+                        employee.AddressCity, 
+                        employee.AddressPostalCode, 
+                        employee.AddressCountry, 
+                        employee.JoinedCompanyDate, 
+                        employee.GrossMonthlySalary, 
+                        employee.IsGrantedCar, 
+                        employee.NbDaysYearlyHolidays
+                    });
+            }
         }
 
         private static NpgsqlConnection GetConnection()

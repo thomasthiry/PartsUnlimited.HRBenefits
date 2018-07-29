@@ -37,9 +37,16 @@ namespace PartsUnlimited.HRBenefits.Web.Controllers
             return View(_mapper.Map<EmployeeViewModel>(employee));
         }
 
-        public IActionResult Edit(int id, EmployeeViewModel employeeViewModel)
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, [FromForm]EmployeeViewModel employeeViewModel)
         {
-            _employeeService.Update(_mapper.Map<Employee>(employeeViewModel));
+            // check model is valid
+
+            var employee = _mapper.Map<Employee>(employeeViewModel);
+            employee.Id = id;
+
+            _employeeService.Update(employee);
 
             return RedirectToAction(nameof(List));
         }

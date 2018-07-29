@@ -38,10 +38,13 @@ namespace PartsUnlimited.HRBenefits.Web.Controllers
         }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, [FromForm]EmployeeViewModel employeeViewModel)
         {
-            // check model is valid
+            if (!ModelState.IsValid)
+            {
+                return View(employeeViewModel);
+            }
 
             var employee = _mapper.Map<Employee>(employeeViewModel);
             employee.Id = id;

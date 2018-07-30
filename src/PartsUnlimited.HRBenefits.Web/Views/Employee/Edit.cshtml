@@ -9,54 +9,67 @@
     <div class="form-group">
         <label asp-for="FirstName">First name</label>
         <input type="text" class="form-control" asp-for="FirstName">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="LastName">Last name</label>
         <input type="text" class="form-control" asp-for="LastName">
+        <span asp-validation-for="LastName" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Reference">Reference</label>
         <input type="text" class="form-control" asp-for="Reference">
+        <span asp-validation-for="Reference" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="DateOfBirth">Date Of Birth</label>
-        <input type="text" class="form-control" asp-for="DateOfBirth">
+        <input type="text" class="form-control" asp-for="DateOfBirth" asp-format="{0:dd/MM/yyyy}">
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="AddressNumber">House Number</label>
         <input type="text" class="form-control" asp-for="AddressNumber">
+        <span asp-validation-for="AddressNumber" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="AddressStreet">Street</label>
         <input type="text" class="form-control" asp-for="AddressStreet">
+        <span asp-validation-for="AddressStreet" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="AddressCity">City</label>
         <input type="text" class="form-control" asp-for="AddressCity">
+        <span asp-validation-for="AddressCity" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="AddressPostalCode">Postal Code</label>
         <input type="text" class="form-control" asp-for="AddressPostalCode">
+        <span asp-validation-for="AddressPostalCode" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="AddressCountry">Postal Country</label>
         <input type="text" class="form-control" asp-for="AddressCountry">
+        <span asp-validation-for="AddressCountry" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="GrossMonthlySalary">Gross Monthly Salary</label>
         <input type="text" class="form-control" asp-for="GrossMonthlySalary">
+        <span asp-validation-for="GrossMonthlySalary" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="JoinedCompanyDate">Joined The Company On</label>
-        <input type="text" class="form-control" asp-for="JoinedCompanyDate">
+        <input type="text" class="form-control" asp-for="JoinedCompanyDate" asp-format="{0:dd/MM/yyyy}">
+        <span asp-validation-for="JoinedCompanyDate" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="NbDaysYearlyHolidays">Number Of Days Of Holidays</label>
         <input type="text" class="form-control" asp-for="NbDaysYearlyHolidays">
+        <span asp-validation-for="NbDaysYearlyHolidays" class="text-danger"></span>
     </div>
     <div class="form-check">
         <input type="checkbox" class="form-check-input" asp-for="IsGrantedCar">
         <label class="form-check-label" asp-for="IsGrantedCar">Grant Car</label>
+        <span asp-validation-for="IsGrantedCar" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
 </form>

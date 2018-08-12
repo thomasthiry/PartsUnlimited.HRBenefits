@@ -13,7 +13,7 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.Repositories
         {
             using (var connection = GetConnection())
             {
-                return connection.Query<Employee>("Select * from Employee");
+                return connection.Query<Employee>(@"select * from ""employee""");
             }
         }
 
@@ -21,7 +21,7 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.Repositories
         {
             using (var connection = GetConnection())
             {
-                return connection.Query<Employee>("Select * from Employee where id = @EmployeeId", new { EmployeeId = id }).FirstOrDefault();
+                return connection.Query<Employee>(@"select * from ""employee"" where id = @EmployeeId", new { EmployeeId = id }).FirstOrDefault();
             }
         }
 
@@ -30,8 +30,8 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.Repositories
             using (var connection = GetConnection())
             {
                 connection.Execute($@"
-                    UPDATE public.employee 
-                    SET
+                    update ""employee"" 
+                    set
                         reference = @{nameof(employee.Reference)}, 
                         lastname = @{nameof(employee.LastName)}, 
                         firstname = @{nameof(employee.FirstName)}, 
@@ -45,7 +45,7 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.Repositories
                         grossmonthlysalary = @{nameof(employee.GrossMonthlySalary)}, 
                         isgrantedcar = @{nameof(employee.IsGrantedCar)},
                         nbdaysyearlyholidays = @{nameof(employee.NbDaysYearlyHolidays)}
-                    WHERE Id = @{nameof(employee.Id)};", 
+                    where id = @{nameof(employee.Id)};", 
                     new
                     {
                         employee.Id, 
@@ -68,7 +68,8 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.Repositories
 
         private static NpgsqlConnection GetConnection()
         {
-            return new NpgsqlConnection("Host=localhost;Username=partsunlimited_hrbenefits;Password=hrbenefits;Database=partsunlimited_hrbenefits");
+            //return new NpgsqlConnection("Host=localhost;Username=partsunlimited_hrbenefits;Password=hrbenefits;Database=partsunlimited_hrbenefits");
+            return new NpgsqlConnection("Host=137.74.47.92;Port=55894;Username=partsunlimited_hrbenefits;Password=tddworkshop;Database=partsunlimited_hrbenefits");
         }
     }
 }

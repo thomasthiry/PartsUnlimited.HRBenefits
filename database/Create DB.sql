@@ -1,3 +1,5 @@
+-- Execute one statement at a time
+
 DROP TABLE EMPLOYEE;
 
 CREATE TABLE EMPLOYEE (

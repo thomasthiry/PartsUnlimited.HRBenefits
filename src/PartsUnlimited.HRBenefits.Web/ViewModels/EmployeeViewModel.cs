@@ -18,5 +18,6 @@ namespace PartsUnlimited.HRBenefits.Web.ViewModels
         public decimal GrossMonthlySalary { get; set; }
         public bool IsGrantedCar { get; set; }
         public int NbDaysYearlyHolidays { get; set; }
+        public int NbDaysAdditionalHolidays { get; set; }
     }
 }

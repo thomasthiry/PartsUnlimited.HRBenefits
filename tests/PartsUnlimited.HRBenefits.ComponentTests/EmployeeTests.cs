@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using PartsUnlimited.HRBenefits.Application.Services;
@@ -38,6 +39,45 @@ namespace PartsUnlimited.HRBenefits.ComponentTests
 
             result.ActionName.ShouldBe("List");
             employeeRepositoryMock.Employees.First().LastName.ShouldBe(employeeEditionViewModel.LastName);
+        }
+
+        [Fact]
+        public void ViewAdditionalDays_40YearsOld0YearsInCompany_Shows2Days()
+        {
+            var employeeRepositoryMock = new EmployeeRepositoryMock();
+            employeeRepositoryMock.Employees.Add(new Employee { Id = 1, FirstName = "Dale", LastName = "Cooper", DateOfBirth = DateTime.Today.AddYears(-40), JoinedCompanyDate = DateTime.Today });
+            var controller = new EmployeeController(new EmployeeService(employeeRepositoryMock), MapperConfig.CreateMapper());
+
+            var result = controller.Edit(1) as ViewResult;
+            var employeeViewModel = result.Model as EmployeeViewModel;
+
+            employeeViewModel.NbDaysAdditionalHolidays.ShouldBe(2);
+        }
+
+        [Fact]
+        public void ViewAdditionalDays_28YearsOld0YearsInCompany_Shows1Day()
+        {
+            var employeeRepositoryMock = new EmployeeRepositoryMock();
+            employeeRepositoryMock.Employees.Add(new Employee { Id = 1, FirstName = "Dale", LastName = "Cooper", DateOfBirth = DateTime.Today.AddYears(-28), JoinedCompanyDate = DateTime.Today});
+            var controller = new EmployeeController(new EmployeeService(employeeRepositoryMock), MapperConfig.CreateMapper());
+
+            var result = controller.Edit(1) as ViewResult;
+            var employeeViewModel = result.Model as EmployeeViewModel;
+
+            employeeViewModel.NbDaysAdditionalHolidays.ShouldBe(1);
+        }
+
+        [Fact]
+        public void ViewAdditionalDays_40YearsOld8YearsInCompany_Shows3Days()
+        {
+            var employeeRepositoryMock = new EmployeeRepositoryMock();
+            employeeRepositoryMock.Employees.Add(new Employee { Id = 1, FirstName = "Dale", LastName = "Cooper", DateOfBirth = DateTime.Today.AddYears(-40), JoinedCompanyDate = DateTime.Today.AddYears(-8)});
+            var controller = new EmployeeController(new EmployeeService(employeeRepositoryMock), MapperConfig.CreateMapper());
+
+            var result = controller.Edit(1) as ViewResult;
+            var employeeViewModel = result.Model as EmployeeViewModel;
+
+            employeeViewModel.NbDaysAdditionalHolidays.ShouldBe(3);
         }
     }
 }

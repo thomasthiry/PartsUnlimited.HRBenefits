@@ -20,10 +20,15 @@ namespace PartsUnlimited.HRBenefits.Domain.Entities
         public int NbDaysYearlyHolidays { get; set; }
 
         public int NbDaysAdditionalHolidays => (PointsForAge + PointsForYearsInCompany) / PointsPerAdditionalDay;
-        private const int YearsPerPoint = 5;
+        private const int YearsOfAgePerPoint = 5;
         private const int PointsPerAdditionalDay = 3;
-        private int PointsForYearsInCompany => (DateTime.Today - JoinedCompanyDate).Days / 365 / 3;
-        private int PointsForAge => Age / YearsPerPoint;
+        private const int YearsInCompanyPerPoint = 3;
+
+        private int PointsForYearsInCompany => YearsInCompany/ YearsInCompanyPerPoint;
+
+        private int YearsInCompany => (DateTime.Today - JoinedCompanyDate).Days / 365;
+
+        private int PointsForAge => Age / YearsOfAgePerPoint;
         private int Age => (DateTime.Today - DateOfBirth).Days / 365;
     }
 }

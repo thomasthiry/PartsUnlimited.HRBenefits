@@ -53,16 +53,6 @@ namespace PartsUnlimited.HRBenefits.ComponentTests
             ExecuteTest(DateTime.Today.AddYears(-40), DateTime.Today, 2);
         }
 
-        private static void ExecuteTest(DateTime dateOfBirth, DateTime joinedCompanyDate, int expectedNbAdditionalDays)
-        {
-            var employee = new Employee { Id = 1, DateOfBirth = dateOfBirth, JoinedCompanyDate = joinedCompanyDate };
-            var controller = CreateController(employee);
-
-            var employeeViewModel = controller.Edit(1).GetModel();
-
-            employeeViewModel.NbDaysAdditionalHolidays.ShouldBe(expectedNbAdditionalDays);
-        }
-
         [Fact]
         public void ViewAdditionalDays_28YearsOld0YearsInCompany_Shows1Day()
         {
@@ -73,6 +63,16 @@ namespace PartsUnlimited.HRBenefits.ComponentTests
         public void ViewAdditionalDays_40YearsOld8YearsInCompany_Shows3Days()
         {
             ExecuteTest(DateTime.Today.AddYears(-40), DateTime.Today.AddYears(-8), 3);
+        }
+
+        private static void ExecuteTest(DateTime dateOfBirth, DateTime joinedCompanyDate, int expectedNbAdditionalDays)
+        {
+            var employee = new Employee { Id = 1, DateOfBirth = dateOfBirth, JoinedCompanyDate = joinedCompanyDate };
+            var controller = CreateController(employee);
+
+            var employeeViewModel = controller.Edit(1).GetModel();
+
+            employeeViewModel.NbDaysAdditionalHolidays.ShouldBe(expectedNbAdditionalDays);
         }
     }
 }

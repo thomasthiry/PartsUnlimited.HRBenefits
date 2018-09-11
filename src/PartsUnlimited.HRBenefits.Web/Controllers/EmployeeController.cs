@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using AutoMapper;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using PartsUnlimited.HRBenefits.Application.Interfaces.Services;
-using PartsUnlimited.HRBenefits.Domain.Entities;
 using PartsUnlimited.HRBenefits.Web.ViewModels;
 
 namespace PartsUnlimited.HRBenefits.Web.Controllers
@@ -10,12 +9,10 @@ namespace PartsUnlimited.HRBenefits.Web.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService _employeeService;
-        private readonly IMapper _mapper;
 
-        public EmployeeController(IEmployeeService employeeService, IMapper mapper)
+        public EmployeeController(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
-            _mapper = mapper;
         }
 
         public IActionResult List()
@@ -24,7 +21,7 @@ namespace PartsUnlimited.HRBenefits.Web.Controllers
 
             var employeesViewModel = new EmployeesViewModel
             {
-                Employees = _mapper.Map<List<EmployeeViewModel>>(employees)
+                Employees = employees.Select(Mapper.Map)
             };
             return View(employeesViewModel);
         }
@@ -34,7 +31,7 @@ namespace PartsUnlimited.HRBenefits.Web.Controllers
         {
             var employee = _employeeService.GetEmployee(id);
 
-            return View(_mapper.Map<EmployeeViewModel>(employee));
+            return View(Mapper.Map(employee));
         }
 
         [HttpPost]
@@ -46,7 +43,7 @@ namespace PartsUnlimited.HRBenefits.Web.Controllers
                 return View(employeeViewModel);
             }
 
-            var employee = _mapper.Map<Employee>(employeeViewModel);
+            var employee = Mapper.Map(employeeViewModel);
             employee.Id = id;
 
             _employeeService.Update(employee);

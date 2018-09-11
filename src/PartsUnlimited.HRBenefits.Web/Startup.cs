@@ -8,7 +8,6 @@ using PartsUnlimited.HRBenefits.Application.Interfaces.Infrastructure;
 using PartsUnlimited.HRBenefits.Application.Interfaces.Services;
 using PartsUnlimited.HRBenefits.Application.Services;
 using PartsUnlimited.HRBenefits.Infrastructure.Repositories;
-using PartsUnlimited.HRBenefits.Web.Configuration;
 
 namespace PartsUnlimited.HRBenefits.Web
 {
@@ -33,8 +32,6 @@ namespace PartsUnlimited.HRBenefits.Web
 
             services.AddTransient<IEmployeeService, EmployeeService>();
             services.AddTransient<IEmployeeRepository, EmployeeRepository>();
-
-            services.AddSingleton(MapperConfig.CreateMapper());
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

@@ -11,7 +11,7 @@ namespace PartsUnlimited.HRBenefits.Application.Services
             var httpclient = new HttpClient();
             httpclient.BaseAddress = new Uri("http://localhost:49830");
 
-            var response = httpclient.GetAsync($"/onlineapi/baseholidays?employeeId={employeeId}").Result;
+            var response = httpclient.GetAsync($"/externalsystem/baseholidays?employeeId={employeeId}").Result;
                 
             var responseText = response.Content.ReadAsStringAsync().Result;
 

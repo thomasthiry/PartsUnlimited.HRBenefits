@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests", "tests\PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests\PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests.csproj", "{DD00F7FF-1595-42B9-B2EB-193FE4F847FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartsUnlimited.HRBenefits.ComponentTests", "tests\PartsUnlimited.HRBenefits.ComponentTests\PartsUnlimited.HRBenefits.ComponentTests.csproj", "{7DB61B01-4EE6-498F-9BD7-551B7530FB1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.ComponentTests", "tests\PartsUnlimited.HRBenefits.ComponentTests\PartsUnlimited.HRBenefits.ComponentTests.csproj", "{7DB61B01-4EE6-498F-9BD7-551B7530FB1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartsUnlimited.HRBenefits.Application.Tests", "PartsUnlimited.HRBenefits.Application.Tests\PartsUnlimited.HRBenefits.Application.Tests.csproj", "{F9CD6810-4C88-430F-B952-FAEB1E570337}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{7DB61B01-4EE6-498F-9BD7-551B7530FB1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DB61B01-4EE6-498F-9BD7-551B7530FB1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DB61B01-4EE6-498F-9BD7-551B7530FB1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9CD6810-4C88-430F-B952-FAEB1E570337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9CD6810-4C88-430F-B952-FAEB1E570337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9CD6810-4C88-430F-B952-FAEB1E570337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9CD6810-4C88-430F-B952-FAEB1E570337}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{B96299CF-AEC8-4224-A5AB-693B840A59FC} = {335904C0-5A33-46CD-B710-0EF120BE4990}
 		{5A438DBA-C1FF-4D72-B327-27A19C3B8D2F} = {F33491F0-7F10-46AE-AB88-FEB8C25B41D4}
 		{DD00F7FF-1595-42B9-B2EB-193FE4F847FE} = {F33491F0-7F10-46AE-AB88-FEB8C25B41D4}
+		{F9CD6810-4C88-430F-B952-FAEB1E570337} = {B29EEE0B-81DA-419F-B0E8-D77071E79DF4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D5611B1-C28D-4CDF-8884-23B9935B7EF8}

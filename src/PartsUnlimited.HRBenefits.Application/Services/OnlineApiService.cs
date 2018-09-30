@@ -9,7 +9,7 @@ namespace PartsUnlimited.HRBenefits.Application.Services
         public int GetPublicHolidays(int employeeId)
         {
             var httpclient = new HttpClient();
-            httpclient.BaseAddress = new Uri("http://localhost:49830");
+            httpclient.BaseAddress = new Uri("https://partsunlimitedhrbenefits.azurewebsites.net");
 
             var response = httpclient.GetAsync($"/externalsystem/baseholidays?employeeId={employeeId}").Result;
                 

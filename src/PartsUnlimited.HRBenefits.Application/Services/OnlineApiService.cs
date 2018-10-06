@@ -6,7 +6,7 @@ namespace PartsUnlimited.HRBenefits.Application.Services
 {
     public class OnlineApiService
     {
-        public int GetPublicHolidays(int employeeId)
+        public int GetBaseHolidays(int employeeId)
         {
             var httpclient = new HttpClient();
             httpclient.BaseAddress = new Uri("https://partsunlimitedhrbenefits.azurewebsites.net");

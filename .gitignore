@@ -31,3 +31,5 @@ Desktop.ini
 
 **/uploads/*
 !**/uploads/.gitkeep
+
+_NCrunch*

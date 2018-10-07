@@ -19,8 +19,7 @@ namespace PartsUnlimited.HRBenefits.ComponentTests
             employeeRepositoryMock.Employees.Add(new Employee{ Id = 1, FirstName = "Dale", LastName = "Cooper" });
             var controller = new EmployeeController(new EmployeeService(employeeRepositoryMock));
 
-            var result = controller.List() as ViewResult;
-            var employeesViewModel = result.Model as EmployeesViewModel;
+            var employeesViewModel = controller.List().ConvertTo<EmployeesViewModel>();
 
             employeesViewModel.Employees.ShouldHaveSingleItem();
             employeesViewModel.Employees.First().FirstName.ShouldBe("Dale");

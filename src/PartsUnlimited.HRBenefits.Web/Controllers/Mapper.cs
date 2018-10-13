@@ -3,7 +3,7 @@ using PartsUnlimited.HRBenefits.Web.ViewModels;
 
 namespace PartsUnlimited.HRBenefits.Web.Controllers
 {
-    public class Mapper
+    public static class Mapper
     {
         public static EmployeeViewModel Map(Employee employee)
         {

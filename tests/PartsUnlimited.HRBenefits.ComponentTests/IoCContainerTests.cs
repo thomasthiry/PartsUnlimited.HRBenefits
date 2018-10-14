@@ -14,7 +14,7 @@ namespace PartsUnlimited.HRBenefits.ComponentTests
 {
     public class IocContainerTests
     {
-        [Fact]
+        [Fact(Skip = "Disabled for demo")]
         public void ResolveEmployeeController()
         {
             var startup = new Startup(null);

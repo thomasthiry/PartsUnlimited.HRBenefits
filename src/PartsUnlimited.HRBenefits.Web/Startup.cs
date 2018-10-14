@@ -31,7 +31,7 @@ namespace PartsUnlimited.HRBenefits.Web
             });
 
             services.AddTransient<IEmployeeService, EmployeeService>();
-            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddSingleton<IEmployeeRepository>(new EmployeeFileRepository("employees.json"));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

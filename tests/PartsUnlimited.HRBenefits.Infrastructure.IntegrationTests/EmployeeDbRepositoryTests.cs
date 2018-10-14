@@ -5,12 +5,12 @@ using Xunit;
 
 namespace PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests
 {
-    public class EmployeeRepositoryTests
+    public class EmployeeDbRepositoryTests
     {
         [Fact]
         public void GetEmployees()
         {
-            var employeeRepository = new EmployeeRepository();
+            var employeeRepository = new EmployeeDbRepository();
 
             var employees = employeeRepository.GetEmployees();
         }
@@ -18,7 +18,7 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests
         [Fact]
         public void GetEmployee()
         {
-            var employeeRepository = new EmployeeRepository();
+            var employeeRepository = new EmployeeDbRepository();
 
             var employee = employeeRepository.GetEmployee(1);
         }
@@ -26,7 +26,7 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests
         [Fact]
         public void Update()
         {
-            var employeeRepository = new EmployeeRepository();
+            var employeeRepository = new EmployeeDbRepository();
 
             var employee = new Employee
             {

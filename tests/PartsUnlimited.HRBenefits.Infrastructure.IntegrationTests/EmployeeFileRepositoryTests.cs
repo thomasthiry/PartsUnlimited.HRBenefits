@@ -60,5 +60,15 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests
 
             employee.ShouldBeNull();
         }
+
+        [Fact]
+        public void GetEmployees()
+        {
+            var repository = CreateRepository();
+
+            var employees = repository.GetEmployees();
+
+            employees.ShouldNotBeEmpty();
+        }
     }
 }

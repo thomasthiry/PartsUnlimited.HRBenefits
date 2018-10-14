@@ -7,7 +7,7 @@ using PartsUnlimited.HRBenefits.Domain.Entities;
 
 namespace PartsUnlimited.HRBenefits.Infrastructure.Repositories
 {
-    public class EmployeeRepository : IEmployeeRepository
+    public class EmployeeDbRepository : IEmployeeRepository
     {
         public IEnumerable<Employee> GetEmployees()
         {

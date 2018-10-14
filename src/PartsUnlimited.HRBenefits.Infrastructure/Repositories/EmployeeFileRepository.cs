@@ -2,22 +2,29 @@
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
+using PartsUnlimited.HRBenefits.Application.Interfaces.Infrastructure;
 using PartsUnlimited.HRBenefits.Domain.Entities;
 
 namespace PartsUnlimited.HRBenefits.Infrastructure.Repositories
 {
-    public class EmployeeFileRepository
+    public class EmployeeFileRepository : IEmployeeRepository
     {
         private readonly string _filePath;
 
         public EmployeeFileRepository(string filePath)
         {
             _filePath = filePath;
+
+            if (File.Exists(_filePath) == false)
+            {
+                var json = JsonConvert.SerializeObject(new List<Employee>());
+                File.WriteAllText(_filePath, json);
+            }
         }
 
         public void Update(Employee employee)
         {
-            var employees = ReadEmployees();
+            var employees = GetEmployees();
 
             var employeeFromDb = employees.Single(e => e.Id == employee.Id);
 
@@ -41,24 +48,19 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.Repositories
             File.WriteAllText(_filePath, jsonToWrite);
         }
 
-        private List<Employee> ReadEmployees()
+        public Employee GetEmployee(int id)
+        {
+            var employees = GetEmployees();
+
+            return employees.SingleOrDefault(e => e.Id == id);
+        }
+
+        public IEnumerable<Employee> GetEmployees()
         {
             var json = File.ReadAllText(_filePath);
             var employees = JsonConvert.DeserializeObject<List<Employee>>(json);
 
             return employees;
-        }
-
-        public Employee GetEmployee(int id)
-        {
-            if (File.Exists(_filePath) == false)
-            {
-                return null;
-            }
-
-            var employees = ReadEmployees();
-
-            return employees.Single(e => e.Id == id);
         }
     }
 }

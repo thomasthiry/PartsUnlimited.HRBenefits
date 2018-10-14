@@ -8,8 +8,7 @@ namespace PartsUnlimited.HRBenefits.Application.Services
     {
         public int GetBaseHolidays(int employeeId)
         {
-            var httpclient = new HttpClient();
-            httpclient.BaseAddress = new Uri("https://partsunlimitedhrbenefits.azurewebsites.net");
+            var httpclient = new HttpClient {BaseAddress = new Uri("https://partsunlimitedhrbenefits.azurewebsites.net")};
 
             var response = httpclient.GetAsync($"/externalsystem/baseholidays?employeeId={employeeId}").Result;
                 

@@ -1,38 +1,49 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Threading;
+using Microsoft.Extensions.Configuration;
 
 namespace NewReleaseMonitor
 {
     class Program
     {
+        public static IConfigurationRoot Configuration { get; set; }
+
         static void Main(string[] args)
         {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Path.Combine(AppContext.BaseDirectory))
+                .AddJsonFile("appsettings.json", optional: true);
+            Configuration = builder.Build();
+
             Console.WriteLine("Monitoring started...");
 
-            var lastUpdate = GetLastUpdateTime();
-            
+            var previousLastUpdate = GetLastUpdateTime();
+            var lastUpdate = previousLastUpdate;
+
             while (true)
             {
-                Thread.Sleep(5000);
-
-                var newLastUpdate = GetLastUpdateTime();
-
-                if (newLastUpdate != lastUpdate)
+                if (lastUpdate != previousLastUpdate)
                 {
                     Process.Start(@"powershell", $@"-c (New-Object Media.SoundPlayer '../../../emergency030.wav').PlaySync();");
                     Thread.Sleep(1500);
+
                     Process.Start(@"powershell", $@"-c (New-Object Media.SoundPlayer '../../../NewVersion.wav').PlaySync();");
 
-                    lastUpdate = newLastUpdate;
+                    previousLastUpdate = lastUpdate;
                 }
+
+                Thread.Sleep(5000);
+                lastUpdate = GetLastUpdateTime();
             }
         }
 
         private static string GetLastUpdateTime()
         {
-            var httpClient = new HttpClient { BaseAddress = new Uri("http://partsunlimitedhrbenefits.azurewebsites.net") };
+            var httpClient = new HttpClient(CreateHttpClientHandlerForConfiguration()) { BaseAddress = new Uri("http://partsunlimitedhrbenefits.azurewebsites.net") };
 
             var response = httpClient.GetAsync("/lastupdate.txt").Result;
 
@@ -41,6 +52,25 @@ namespace NewReleaseMonitor
             Console.WriteLine($"Last update: {lastUpdate}");
             
             return lastUpdate;
+        }
+
+        private static HttpClientHandler CreateHttpClientHandlerForConfiguration()
+        {
+            var proxyAddress = Configuration["proxyAddress"];
+
+            if (proxyAddress != "")
+            {
+                return new HttpClientHandler
+                {
+                    Proxy = new WebProxy(proxyAddress, BypassOnLocal: true),
+                    PreAuthenticate = true,
+                    UseDefaultCredentials = false,
+                };
+            }
+            else
+            {
+                return new HttpClientHandler();
+            }
         }
     }
 }

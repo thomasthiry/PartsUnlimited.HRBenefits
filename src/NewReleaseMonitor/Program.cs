@@ -37,7 +37,12 @@ namespace NewReleaseMonitor
                 }
 
                 Thread.Sleep(5000);
-                lastUpdate = GetLastUpdateTime();
+                var serverResponse = GetLastUpdateTime();
+
+                if (serverResponse.Length < 45) // E.g. Last update: Sun 10/21/2018 20:05:09.17, longer would be an error message.
+                {
+                    lastUpdate = serverResponse;
+                }
             }
         }
 
@@ -49,7 +54,7 @@ namespace NewReleaseMonitor
 
             var lastUpdate = response.Content.ReadAsStringAsync().Result;
 
-            Console.WriteLine($"Last update: {lastUpdate}");
+            Console.WriteLine($"{lastUpdate}");
             
             return lastUpdate;
         }

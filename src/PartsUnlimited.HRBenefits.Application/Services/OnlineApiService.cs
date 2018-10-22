@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
 using Newtonsoft.Json;
 
@@ -8,7 +9,14 @@ namespace PartsUnlimited.HRBenefits.Application.Services
     {
         public int GetBaseHolidays(int employeeId)
         {
-            var httpclient = new HttpClient {BaseAddress = new Uri("https://partsunlimitedhrbenefits.azurewebsites.net")};
+            var httpClientHandler = new HttpClientHandler
+            {
+                Proxy = new WebProxy("http://127.0.0.1:3128", BypassOnLocal: true),
+                PreAuthenticate = true,
+                UseDefaultCredentials = false,
+            };
+
+            var httpclient = new HttpClient(httpClientHandler) {BaseAddress = new Uri("https://partsunlimitedhrbenefits.azurewebsites.net")};
 
             var response = httpclient.GetAsync($"/externalsystem/baseholidays?employeeId={employeeId}").Result;
                 

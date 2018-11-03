@@ -16,9 +16,9 @@ namespace PartsUnlimited.HRBenefits.Application.Services
                 UseDefaultCredentials = false,
             };
 
-            var httpclient = new HttpClient(httpClientHandler) {BaseAddress = new Uri("https://partsunlimitedhrbenefits.azurewebsites.net")};
+            var httpClient = new HttpClient(/*httpClientHandler*/) {BaseAddress = new Uri("https://partsunlimitedhrbenefits.azurewebsites.net")};
 
-            var response = httpclient.GetAsync($"/externalsystem/baseholidays?employeeId={employeeId}").Result;
+            var response = httpClient.GetAsync($"/externalsystem/baseholidays?employeeId={employeeId}").Result;
                 
             var responseText = response.Content.ReadAsStringAsync().Result;
 

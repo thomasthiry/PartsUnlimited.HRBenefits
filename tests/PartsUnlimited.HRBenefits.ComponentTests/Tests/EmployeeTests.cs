@@ -13,7 +13,7 @@ namespace PartsUnlimited.HRBenefits.ComponentTests.Tests
     public class EmployeeTests
     {
         [Fact]
-        public void List_OneEmployee_ReturnsTheEmployee()
+        public void ViewListOfEmployees_WithOneEmployee_ReturnsTheEmployee()
         {
             var employeeRepositoryMock = new EmployeeRepositoryMock();
             employeeRepositoryMock.Employees.Add(new Employee{ Id = 1, FirstName = "Dale", LastName = "Cooper" });
@@ -26,7 +26,7 @@ namespace PartsUnlimited.HRBenefits.ComponentTests.Tests
         }
 
         [Fact]
-        public void Edit_OneEmployee_CallsTheRepositoryAndRedirectsToList()
+        public void EditEmployee_SavesTheEmployeeAndRedirectsToList()
         {
             var employeeRepositoryMock = new EmployeeRepositoryMock();
             employeeRepositoryMock.Employees.Add(new Employee{ Id = 1, FirstName = "Dale", LastName = "Cooper" });

@@ -65,6 +65,7 @@
         <label asp-for="NbDaysYearlyHolidays">Number Of Days Of Holidays</label>
         <input type="text" class="form-control" asp-for="NbDaysYearlyHolidays">
         <span asp-validation-for="NbDaysYearlyHolidays" class="text-danger"></span>
+        <p><a href="https://partsunlimitedhrbenefits.azurewebsites.net/externalsystem/baseholidays?employeeId=@Model.Id" target="_blank">Open base holidays for this employee</a></p>
     </div>
     <div class="form-check">
         <input type="checkbox" class="form-check-input" asp-for="IsGrantedCar">

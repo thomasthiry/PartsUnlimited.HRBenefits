@@ -9,14 +9,7 @@ namespace PartsUnlimited.HRBenefits.Application.Services
     {
         public int GetBaseHolidays(int employeeId)
         {
-            var httpClientHandler = new HttpClientHandler
-            {
-                Proxy = new WebProxy("http://127.0.0.1:3128", BypassOnLocal: true),
-                PreAuthenticate = true,
-                UseDefaultCredentials = false,
-            };
-
-            var httpClient = new HttpClient(/*httpClientHandler*/) {BaseAddress = new Uri("https://partsunlimitedhrbenefits.azurewebsites.net")};
+            var httpClient = new HttpClient {BaseAddress = new Uri("https://partsunlimitedhrbenefits.azurewebsites.net")};
 
             var response = httpClient.GetAsync($"/externalsystem/baseholidays?employeeId={employeeId}").Result;
                 

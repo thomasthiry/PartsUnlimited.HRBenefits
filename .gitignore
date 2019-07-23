@@ -1,8 +1,8 @@
 ﻿# Visual Studio user-specific files
-*.suo
-*.user
-*.docstates
-*/.vs/*
+**.suo
+**.user
+**.docstates
+**/.vs/*
 .vs/*
 
 # Build working directories

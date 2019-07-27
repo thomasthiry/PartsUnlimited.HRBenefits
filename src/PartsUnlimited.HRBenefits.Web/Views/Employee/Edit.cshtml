@@ -23,7 +23,7 @@
     </div>
     <div class="form-group">
         <label asp-for="DateOfBirth">Date Of Birth</label>
-        <input type="text" class="form-control" asp-for="DateOfBirth" asp-format="{0:dd/MM/yyyy}">
+        <input type="date" class="form-control" asp-for="DateOfBirth" asp-format="{0:dd/MM/yyyy}">
         <span asp-validation-for="DateOfBirth" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -58,7 +58,7 @@
     </div>
     <div class="form-group">
         <label asp-for="JoinedCompanyDate">Joined The Company On</label>
-        <input type="text" class="form-control" asp-for="JoinedCompanyDate" asp-format="{0:dd/MM/yyyy}">
+        <input type="date" class="form-control" asp-for="JoinedCompanyDate" asp-format="{0:dd/MM/yyyy}">
         <span asp-validation-for="JoinedCompanyDate" class="text-danger"></span>
     </div>
     <div class="form-group">

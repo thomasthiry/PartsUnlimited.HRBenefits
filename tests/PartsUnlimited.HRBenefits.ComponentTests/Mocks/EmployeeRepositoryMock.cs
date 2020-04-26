@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 using PartsUnlimited.HRBenefits.Application.Interfaces.SecondaryPorts;
 using PartsUnlimited.HRBenefits.Domain.Entities;
 
-namespace PartsUnlimited.HRBenefits.ComponentTests.TestDoubles
+namespace PartsUnlimited.HRBenefits.ComponentTests.Mocks
 {
-    public class EmployeeRepositoryStub : IEmployeeRepository
+    public class EmployeeRepositoryMock : IEmployeeRepository
     {
         public List<Employee> Employees = new List<Employee>();
 

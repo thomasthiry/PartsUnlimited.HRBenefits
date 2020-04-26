@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PartsUnlimited.HRBenefits.Application.Interfaces.Infrastructure;
-using PartsUnlimited.HRBenefits.Application.Interfaces.Services;
+using PartsUnlimited.HRBenefits.Application.Interfaces.PrimaryPorts;
+using PartsUnlimited.HRBenefits.Application.Interfaces.SecondaryPorts;
 using PartsUnlimited.HRBenefits.Application.Services;
 using PartsUnlimited.HRBenefits.Infrastructure.Repositories;
 
@@ -30,7 +30,7 @@ namespace PartsUnlimited.HRBenefits.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddTransient<IEmployeeService, EmployeeService>();
+            services.AddTransient<IManageEmployees, EmployeeService>();
             services.AddSingleton<IEmployeeRepository>(new EmployeeFileRepository("employees.json"));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

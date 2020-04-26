@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
-using PartsUnlimited.HRBenefits.Application.Interfaces.Infrastructure;
+using PartsUnlimited.HRBenefits.Application.Interfaces.SecondaryPorts;
 using PartsUnlimited.HRBenefits.Domain.Entities;
 
 namespace PartsUnlimited.HRBenefits.Infrastructure.Repositories

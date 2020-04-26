@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using PartsUnlimited.HRBenefits.Application.Interfaces.Services;
+using PartsUnlimited.HRBenefits.Application.Interfaces.PrimaryPorts;
 using PartsUnlimited.HRBenefits.Web.ViewModels;
 
 namespace PartsUnlimited.HRBenefits.Web.Controllers
 {
     public class EmployeeController : Controller
     {
-        private readonly IEmployeeService _employeeService;
+        private readonly IManageEmployees _employeeService;
 
-        public EmployeeController(IEmployeeService employeeService)
+        public EmployeeController(IManageEmployees employeeService)
         {
             _employeeService = employeeService;
         }

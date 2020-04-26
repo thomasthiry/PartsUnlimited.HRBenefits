@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using PartsUnlimited.HRBenefits.Application.Interfaces.Infrastructure;
-using PartsUnlimited.HRBenefits.Application.Interfaces.Services;
+using PartsUnlimited.HRBenefits.Application.Interfaces.PrimaryPorts;
+using PartsUnlimited.HRBenefits.Application.Interfaces.SecondaryPorts;
 using PartsUnlimited.HRBenefits.Domain.Entities;
 
 namespace PartsUnlimited.HRBenefits.Application.Services
 {
-    public class EmployeeService : IEmployeeService
+    public class EmployeeService : IManageEmployees
     {
         private readonly IEmployeeRepository _employeeRepository;
 

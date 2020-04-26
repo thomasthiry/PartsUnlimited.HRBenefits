@@ -12,15 +12,19 @@ namespace PartsUnlimited.HRBenefits.ComponentTests.Mocks
 
         public IEnumerable<Employee> GetEmployees()
         {
-            var jsonCopyOfEmployees = JsonConvert.SerializeObject(Employees);
-            return JsonConvert.DeserializeObject<List<Employee>>(jsonCopyOfEmployees);
+            return CopyOfObject(Employees);
         }
 
         public Employee GetEmployee(int id)
         {
             var employee = Employees.FirstOrDefault(e => e.Id == id);
-            var jsonCopyOfEmployee = JsonConvert.SerializeObject(employee);
-            return JsonConvert.DeserializeObject<Employee>(jsonCopyOfEmployee);
+            return CopyOfObject(employee);
+        }
+
+        private static T CopyOfObject<T>(T objectToCopy)
+        {
+            var jsonCopyOfObject = JsonConvert.SerializeObject(objectToCopy);
+            return JsonConvert.DeserializeObject<T>(jsonCopyOfObject);
         }
 
         public void Update(Employee employee)

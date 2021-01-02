@@ -1,9 +1,9 @@
 ﻿{
   "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:49830",
+      "applicationUrl": "http://localhost:51685",
       "sslPort": 0
     }
   },
@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "PartsUnlimited.HRBenefits": {
+    "PartsUnlimited.HRBenefits.Web": {
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5000",

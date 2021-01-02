@@ -1,0 +1,20 @@
+﻿@model PartsUnlimited.HRBenefits.Web.ViewModels.EmployeesViewModel
+@{
+    ViewData["Title"] = "Employee List";
+}
+
+<h1>Employees</h1>
+
+<p>Click on an employee to edit its benefits.</p>
+
+<table class="table">
+    <thead>
+        <tr><th>Name</th></tr>
+    </thead>
+    <tbody>
+    @foreach(var employee in Model.Employees)
+    {
+        <tr><td><a asp-controller="Employee" asp-action="Edit" asp-route-id="@employee.Id">@employee.FirstName @employee.LastName</a></td></tr>
+    }
+    </tbody>
+</table>

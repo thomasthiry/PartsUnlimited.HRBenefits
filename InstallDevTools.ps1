@@ -1,4 +1,5 @@
-# Run with: Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force; .\InstallDevVM.ps1
+# Run with: 
+# Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force; iwr -useb https://raw.githubusercontent.com/thomasthiry/PartsUnlimited.HRBenefits/master/InstallDevTools.ps1 | iex
 
 
 # Install choco
@@ -25,3 +26,6 @@ git clone https://github.com/thomasthiry/PartsUnlimited.HRBenefits.git
 
 # Set launch dev tools as a startup script
 echo powershell C:\Users\TddWorkshop\Dev\PartsUnlimited.HRBenefits\LaunchDevTools.ps1 > "C:\Users\TddWorkshop\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\LaunchDevTools.bat"
+
+# Set time to Brussels time
+tzutil /s "Romance Standard Time"

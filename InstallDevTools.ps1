@@ -22,3 +22,6 @@ git clone https://github.com/thomasthiry/PartsUnlimited.HRBenefits.git
 
 
 # Install Resharper extension "Presentation Assistant"
+
+# Set launch dev tools as a startup script
+echo powershell C:\Users\TddWorkshop\Dev\PartsUnlimited.HRBenefits\LaunchDevTools.ps1 > "C:\Users\TddWorkshop\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\LaunchDevTools.bat"

@@ -2,3 +2,4 @@
 & C:\Users\TddWorkshop\AppData\Local\Fork\Fork.exe
 explorer C:\Users\TddWorkshop\Dev\PartsUnlimited.HRBenefits
 Start-Process C:\tools\cmdermini\vendor\conemu-maximus5\ConEmu64.exe -WorkingDirectory "C:\Users\TddWorkshop\Dev\PartsUnlimited.HRBenefits"
+& "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" "https://miro.com/app/board/o9J_lcheR4k=/"

@@ -11,7 +11,7 @@ choco install win-no-annoy # Removes many confirmation popups of a fresh windows
 choco install vscode
 choco install git
 choco install git-fork
-choco install visualstudio2019community
+choco install visualstudio2019community --package-parameters "--add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetWeb"
 choco install resharper
 choco install ncrunch-vs2019
 choco install cmdermini
@@ -24,7 +24,8 @@ cd C:\users\TddWorkshop\Dev\
 # Don't forget to install Resharper extension "Presentation Assistant"
 
 # Set launch dev tools as a startup script
-echo powershell C:\Users\TddWorkshop\Dev\PartsUnlimited.HRBenefits\LaunchDevTools.ps1 > "C:\Users\TddWorkshop\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\LaunchDevTools.bat"
+New-Item "C:\Users\TddWorkshop\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\LaunchDevTools.bat" -Force
+Set-Content "C:\Users\TddWorkshop\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\LaunchDevTools.bat" "powershell C:\Users\TddWorkshop\Dev\PartsUnlimited.HRBenefits\LaunchDevTools.ps1"
 
 # Set time to Brussels time
 tzutil /s "Romance Standard Time"

@@ -14,7 +14,17 @@ choco install git-fork
 choco install visualstudio2019community --package-parameters "--add Microsoft.VisualStudio.Workload.NetCoreTools --add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NetWeb"
 choco install resharper
 choco install ncrunch-vs2019
+
 choco install cmdermini
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
+Install-Module posh-git
+Install-Module oh-my-posh
+$CmderProfilePath = "C:\tools\cmdermini\config\user_profile.ps1"
+Add-Content $CmderProfilePath "Import-Module posh-git"
+Add-Content $CmderProfilePath "Import-Module oh-my-posh"
+Add-Content $CmderProfilePath "Set-Theme Agnoster"
+
 choco install anydesk.install
 
 mkdir C:\users\TddWorkshop\Dev\

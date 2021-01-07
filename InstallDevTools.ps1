@@ -15,6 +15,9 @@ choco install visualstudio2019community --package-parameters "--add Microsoft.Vi
 choco install resharper
 choco install ncrunch-vs2019
 
+mkdir C:\users\TddWorkshop\Dev\
+cd C:\users\TddWorkshop\Dev\
+
 choco install cmdermini
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
@@ -25,17 +28,14 @@ Add-Content $CmderProfilePath "Import-Module posh-git"
 Add-Content $CmderProfilePath "Import-Module oh-my-posh"
 Add-Content $CmderProfilePath "Set-Theme Agnoster"
 # Install Powerline fonts (used by oh-my-posh for git)
-cd C:\Users\TddWorkshop\Dev\fonts3
-git clone https://github.com/powerline/fonts
+& "C:\Program Files\Git\bin\git.exe" clone https://github.com/powerline/fonts
 ./fonts/install.ps1
-# Overwrite cmder/conemu configuration
-Copy-Item "C:\Users\TddWorkshop\Dev\PartsUnlimited.HRBenefits\configs\ConEmu.xml" -Destination "C:\tools\cmdermini\vendor\conemu-maximus5" -Force
+# Overwrite cmder configuration
+Copy-Item "C:\Users\TddWorkshop\Dev\PartsUnlimited.HRBenefits\configs\ConEmu.xml" -Destination "C:\tools\cmdermini\config\user-ConEmu.xml" -Force
 
 
 choco install anydesk.install
 
-mkdir C:\users\TddWorkshop\Dev\
-cd C:\users\TddWorkshop\Dev\
 & "C:\Program Files\Git\bin\git.exe" clone https://github.com/thomasthiry/PartsUnlimited.HRBenefits.git
 
 # Don't forget to install Resharper extension "Presentation Assistant"

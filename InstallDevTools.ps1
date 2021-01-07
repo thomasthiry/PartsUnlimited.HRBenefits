@@ -1,6 +1,6 @@
 # Run with: 
 # Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force; iwr -useb https://raw.githubusercontent.com/thomasthiry/PartsUnlimited.HRBenefits/master/InstallDevTools.ps1 | iex
-
+# ---------------------------------------
 
 # Install choco
 iwr -useb cin.st | iex
@@ -24,6 +24,13 @@ $CmderProfilePath = "C:\tools\cmdermini\config\user_profile.ps1"
 Add-Content $CmderProfilePath "Import-Module posh-git"
 Add-Content $CmderProfilePath "Import-Module oh-my-posh"
 Add-Content $CmderProfilePath "Set-Theme Agnoster"
+# Install Powerline fonts (used by oh-my-posh for git)
+cd C:\Users\TddWorkshop\Dev\fonts3
+git clone https://github.com/powerline/fonts
+./fonts/install.ps1
+# Overwrite cmder/conemu configuration
+Copy-Item "C:\Users\TddWorkshop\Dev\PartsUnlimited.HRBenefits\configs\ConEmu.xml" -Destination "C:\tools\cmdermini\vendor\conemu-maximus5" -Force
+
 
 choco install anydesk.install
 

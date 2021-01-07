@@ -17,6 +17,7 @@ choco install ncrunch-vs2019
 
 mkdir C:\users\TddWorkshop\Dev\
 cd C:\users\TddWorkshop\Dev\
+& "C:\Program Files\Git\bin\git.exe" clone https://github.com/thomasthiry/PartsUnlimited.HRBenefits.git
 
 choco install cmdermini
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
@@ -36,7 +37,7 @@ Copy-Item "C:\Users\TddWorkshop\Dev\PartsUnlimited.HRBenefits\configs\ConEmu.xml
 
 choco install anydesk.install
 
-& "C:\Program Files\Git\bin\git.exe" clone https://github.com/thomasthiry/PartsUnlimited.HRBenefits.git
+
 
 # Don't forget to install Resharper extension "Presentation Assistant"
 

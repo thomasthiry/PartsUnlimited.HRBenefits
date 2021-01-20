@@ -3,14 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using PartsUnlimited.HRBenefits.Application.Interfaces.PrimaryPorts;
-using PartsUnlimited.HRBenefits.Application.Interfaces.SecondaryPorts;
-using PartsUnlimited.HRBenefits.Application.Services;
-using PartsUnlimited.HRBenefits.Infrastructure.Repositories;
 
 namespace PartsUnlimited.HRBenefits.Web
 {
@@ -28,8 +20,7 @@ namespace PartsUnlimited.HRBenefits.Web
         {
             services.AddControllersWithViews();
 
-            services.AddTransient<IManageEmployees, EmployeeService>();
-            services.AddSingleton<IEmployeeRepository>(new EmployeeFileRepository("employees.json"));
+            services.UseCompositionRootInsteadOfIocContainer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

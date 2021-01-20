@@ -15,9 +15,9 @@ namespace PartsUnlimited.HRBenefits.ComponentTests.Tests
         [Fact]
         public void ViewListOfEmployees_WithOneEmployee_ReturnsTheEmployee()
         {
-            var employeeRepositoryStub = new EmployeeRepositoryMock();
-            employeeRepositoryStub.Employees.Add(new Employee{ Id = 1, FirstName = "Dale", LastName = "Cooper" });
-            var controller = new EmployeeController(new EmployeeService(employeeRepositoryStub));
+            var employeeRepositoryMock = new EmployeeRepositoryMock();
+            employeeRepositoryMock.Employees.Add(new Employee{ Id = 1, FirstName = "Dale", LastName = "Cooper" });
+            var controller = new EmployeeController(new EmployeeService(employeeRepositoryMock));
 
             var employeesViewModel = controller.List().ConvertTo<EmployeesViewModel>();
 
@@ -28,15 +28,15 @@ namespace PartsUnlimited.HRBenefits.ComponentTests.Tests
         [Fact]
         public void EditEmployee_SavesTheEmployeeAndRedirectsToList()
         {
-            var employeeRepositoryStub = new EmployeeRepositoryMock();
-            employeeRepositoryStub.Employees.Add(new Employee{ Id = 1, FirstName = "Dale", LastName = "Cooper" });
-            var controller = new EmployeeController(new EmployeeService(employeeRepositoryStub));
+            var employeeRepositoryMock = new EmployeeRepositoryMock();
+            employeeRepositoryMock.Employees.Add(new Employee{ Id = 1, FirstName = "Dale", LastName = "Cooper" });
+            var controller = new EmployeeController(new EmployeeService(employeeRepositoryMock));
 
             var employeeEditionViewModel = new EmployeeViewModel{ Id = 1, FirstName = "Dale2", LastName = "Cooper2" };
             var result = controller.Edit(employeeEditionViewModel.Id, employeeEditionViewModel) as RedirectToActionResult;
 
             result.ActionName.ShouldBe("List");
-            employeeRepositoryStub.Employees.First().LastName.ShouldBe(employeeEditionViewModel.LastName);
+            employeeRepositoryMock.Employees.First().LastName.ShouldBe(employeeEditionViewModel.LastName);
         }
     }
 }

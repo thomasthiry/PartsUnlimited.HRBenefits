@@ -23,6 +23,7 @@ namespace PartsUnlimited.HRBenefits.Web.Controllers
                 GrossMonthlySalary = employee.GrossMonthlySalary,
                 IsGrantedCar = employee.IsGrantedCar,
                 NbDaysYearlyHolidays = employee.NbDaysYearlyHolidays,
+                NbExtraHolidays = employee.NbExtraHolidays,
             };
         }
 

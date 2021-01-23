@@ -18,5 +18,6 @@ namespace PartsUnlimited.HRBenefits.Domain.Entities
         public decimal GrossMonthlySalary { get; set; }
         public bool IsGrantedCar { get; set; }
         public int NbDaysYearlyHolidays { get; set; }
+        public int NbExtraHolidays => (DateTime.Today.Year - DateOfBirth.Year) / 5 / 3;
     }
 }

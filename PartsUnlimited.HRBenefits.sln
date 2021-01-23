@@ -23,7 +23,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.Application.IntegrationTests", "tests\PartsUnlimited.HRBenefits.Application.IntegrationTests\PartsUnlimited.HRBenefits.Application.IntegrationTests.csproj", "{2D235599-849B-4718-8292-32CD16447F44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartsUnlimited.HRBenefits.Web", "src\PartsUnlimited.HRBenefits.Web\PartsUnlimited.HRBenefits.Web.csproj", "{EF22D750-220E-4A08-BE9E-C3BD9492B21E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.Web", "src\PartsUnlimited.HRBenefits.Web\PartsUnlimited.HRBenefits.Web.csproj", "{EF22D750-220E-4A08-BE9E-C3BD9492B21E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{710EEFF4-6C94-4865-A005-CA6C48E50797}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		Todo.md = Todo.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

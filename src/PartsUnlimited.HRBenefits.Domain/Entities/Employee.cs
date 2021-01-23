@@ -4,6 +4,8 @@ namespace PartsUnlimited.HRBenefits.Domain.Entities
 {
     public class Employee
     {
+        private const int NbYearsOfAgeFor1HolidayPoint = 5;
+        private const int NbHolidayPointsFor1ExtraHoliday = 3;
         public int Id { get; set; }
         public int Reference { get; set; }
         public string FirstName { get; set; }
@@ -18,6 +20,8 @@ namespace PartsUnlimited.HRBenefits.Domain.Entities
         public decimal GrossMonthlySalary { get; set; }
         public bool IsGrantedCar { get; set; }
         public int NbDaysYearlyHolidays { get; set; }
-        public int NbExtraHolidays => (DateTime.Today.Year - DateOfBirth.Year) / 5 / 3;
+        
+        public int NbExtraHolidays => Age / NbYearsOfAgeFor1HolidayPoint / NbHolidayPointsFor1ExtraHoliday;
+        private int Age => DateTime.Today.Year - DateOfBirth.Year;
     }
 }

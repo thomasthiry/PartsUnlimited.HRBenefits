@@ -42,7 +42,7 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests
         }
 
         [Fact]
-        public void GetEmployee()
+        public void Get_employee()
         {
             var repository = CreateRepository();
 
@@ -52,7 +52,7 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests
         }
 
         [Fact]
-        public void GetEmployee_FileDoesNotExist_ReturnsNull()
+        public void Get_employee_when_file_does_not_exist_returns_null()
         {
             var repository = new EmployeeFileRepository("non-existing-file.json");
 
@@ -62,7 +62,7 @@ namespace PartsUnlimited.HRBenefits.Infrastructure.IntegrationTests
         }
 
         [Fact]
-        public void GetEmployees()
+        public void Get_employees()
         {
             var repository = CreateRepository();
 

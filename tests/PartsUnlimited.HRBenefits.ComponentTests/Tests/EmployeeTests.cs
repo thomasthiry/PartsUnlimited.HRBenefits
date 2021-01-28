@@ -56,7 +56,7 @@ namespace PartsUnlimited.HRBenefits.ComponentTests.Tests
         public void An_employee_who_is_37_and_joined_yesterday_should_have_2_extra_holidays()
         {
             var employeeRepositoryMock = new EmployeeRepositoryMock();
-            employeeRepositoryMock.Employees.Add(new Employee{ Id = 1, FirstName = "Dale", LastName = "Cooper", DateOfBirth = DateTime.Today.AddYears(-37)});
+            employeeRepositoryMock.Employees.Add(new Employee{ Id = 1, DateOfBirth = DateTime.Today.AddYears(-37), JoinedCompanyDate = DateTime.Today.AddDays(-1)});
             var controller = new EmployeeController(new EmployeeService(employeeRepositoryMock));
 
             var employeeViewModel = controller.Edit(1).ConvertTo<EmployeeViewModel>();

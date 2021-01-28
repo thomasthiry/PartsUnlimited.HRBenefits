@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - I
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{335904C0-5A33-46CD-B710-0EF120BE4990}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.Web", "src\PartsUnlimited.HRBenefits.Web\PartsUnlimited.HRBenefits.Web.csproj", "{EF22D750-220E-4A08-BE9E-C3BD9492B21E}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.Application", "src\PartsUnlimited.HRBenefits.Application\PartsUnlimited.HRBenefits.Application.csproj", "{273A22D4-E9A4-4344-94A7-AF1F555AC704}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.Domain", "src\PartsUnlimited.HRBenefits.Domain\PartsUnlimited.HRBenefits.Domain.csproj", "{B96299CF-AEC8-4224-A5AB-693B840A59FC}"
@@ -22,8 +24,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.ComponentTests", "tests\PartsUnlimited.HRBenefits.ComponentTests\PartsUnlimited.HRBenefits.ComponentTests.csproj", "{7DB61B01-4EE6-498F-9BD7-551B7530FB1E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.Application.IntegrationTests", "tests\PartsUnlimited.HRBenefits.Application.IntegrationTests\PartsUnlimited.HRBenefits.Application.IntegrationTests.csproj", "{2D235599-849B-4718-8292-32CD16447F44}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartsUnlimited.HRBenefits.Web", "src\PartsUnlimited.HRBenefits.Web\PartsUnlimited.HRBenefits.Web.csproj", "{EF22D750-220E-4A08-BE9E-C3BD9492B21E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{710EEFF4-6C94-4865-A005-CA6C48E50797}"
 	ProjectSection(SolutionItems) = preProject

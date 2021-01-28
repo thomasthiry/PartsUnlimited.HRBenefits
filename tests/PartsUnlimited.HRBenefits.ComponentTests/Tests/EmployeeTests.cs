@@ -38,5 +38,17 @@ namespace PartsUnlimited.HRBenefits.ComponentTests.Tests
             result.ActionName.ShouldBe("List");
             employeeRepositoryMock.Employees.First().LastName.ShouldBe(employeeEditionViewModel.LastName);
         }
+
+        [Fact]
+        public void Viewing_an_employee_shows_its_current_number_of_holidays()
+        {
+            var employeeRepositoryMock = new EmployeeRepositoryMock();
+            employeeRepositoryMock.Employees.Add(new Employee{ Id = 1, NbDaysYearlyHolidays = 25 });
+            var controller = new EmployeeController(new EmployeeService(employeeRepositoryMock));
+
+            var employeeViewModel = controller.Edit(1).ConvertTo<EmployeeViewModel>();
+
+            employeeViewModel.NbDaysYearlyHolidays.ShouldBe(25);
+        }
     }
 }
